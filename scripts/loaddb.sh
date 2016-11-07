@@ -1,7 +1,8 @@
-if [ -f /var/sqldump/database.sql ];
+if [ -f /var/sqldump/delphic_wp.sql ];
 then
     DATE=$(date +"%Y%m%d%H%M")
 
-    mysql -uroot -proot devdb < /var/sqldump/database.sql
-    mv /var/sqldump/database.sql /var/sqldump/$DATE-imported.sql
+    #mysql -uroot -proot delphic_wp < /var/sqldump/delphic_wp.sql
+	mysql -uroot -proot delphic_wp < /var/sqldump/delphic_wp-migrate-20160120145600.sql
+    # mv /var/sqldump/database.sql /var/sqldump/$DATE-imported.sql
 fi
